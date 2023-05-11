@@ -1,0 +1,59 @@
+.my-page {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+.user-block {
+  margin-top: 50px;
+  width: 100%;
+  height: 200px;
+  background-color: rgba(34, 34, 34, 0.6);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.user-block__avatar {
+  margin-left: 20px;
+}
+.user-block__avatar img {
+  width: 150px;
+  border-radius: 50%;
+  border: 1px solid #38b6ff;
+}
+.user-block__data {
+  margin-left: 20px;
+  margin-top: 20px;
+  align-self: flex-start;
+  max-width: 470px;
+}
+.user-block__name {
+  font-size: 30px;
+  font-weight: 500;
+}
+.user-block__nick {
+  margin-top: 10px;
+  font-weight: 200;
+}
+.user-block__quote {
+  margin-top: 60px;
+  font-style: italic;
+  font-weight: 200;
+}
+.user-block__edit {
+  background-color: rgba(34, 34, 34, 1);
+  border-radius: 5px;
+  border: none;
+  width: 150px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.user-block__edit:hover {
+  background-color: rgb(60, 59, 59);
+}
