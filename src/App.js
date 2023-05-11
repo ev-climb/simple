@@ -1,3 +1,6 @@
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+
 import LoginPage from './Pages/LoginPage/LoginPage';
 import MyPage from './Pages/MyPage/MyPage';
 import News from './Pages/News/News';
@@ -11,7 +14,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Communication />
+      <Routes>
+        <Route exact path="/" element={<MyPage />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/communication" element={<Communication />} />
+      </Routes>
     </div>
   );
 }

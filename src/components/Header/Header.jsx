@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './index.css';
 
 function Header() {
@@ -8,15 +9,16 @@ function Header() {
         <img src="/images/logo/simple-logo-blue.svg" alt="logo" className="header__logo" />
         <nav className="menu">
           <li className="menu__item">
-            <img src="/images/icons/icon-account-blue.png" alt="icon-account" /> Моя страница
+            <img src="/images/icons/icon-account-blue.png" alt="icon-account" />
+            <Link to="/">Моя страница</Link>
           </li>
           <li className="menu__item">
             <img src="/images/icons/icon-tolk-blue.png" alt="icon-tolk" />
-            Общение
+            <Link to="/communication">Общение</Link>
           </li>
           <li className="menu__item">
             <img src="/images/icons/icon-news-blue.svg" alt="icon-news" />
-            Новости
+            <Link to="/news">Новости</Link>
           </li>
         </nav>
         <div className="header__avatar">

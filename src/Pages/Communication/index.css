@@ -1,5 +1,6 @@
 .communication {
   width: 60%;
+  height: 100vh;
   min-height: 460px;
   margin: 20px auto;
   background-color: rgba(34, 34, 34, 0.6);
