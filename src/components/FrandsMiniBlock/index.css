@@ -1,0 +1,59 @@
+.frends-block {
+  width: 37%;
+  min-height: 50px;
+  max-height: 315px;
+  background-color: rgba(34, 34, 34, 0.6);
+  border-radius: 15px;
+  padding: 20px;
+}
+.frends-block h2 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.frends-block span {
+  color: darkgrey;
+}
+.frends-mini-block {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+.frends-mini-block:last-of-type {
+  border-bottom: none;
+  margin-top: 20px;
+}
+.frends-mini-block__title {
+  display: flex;
+}
+.frends-mini-block__items {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.frends-mini-block__item {
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+.frends-mini-block__item:hover {
+  background-color: rgba(34, 34, 34, 1);
+}
+.frends-mini-block__item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.frends-mini-block__item p {
+  margin-top: 10px;
+  font-size: 12px;
+}
+.frends-all {
+  display: flex;
+  margin-top: 20px;
+}

@@ -1,32 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import Logo from '../Logo/Logo';
+import Menu from '../Menu/Menu';
+import Avatar from '../Avatar/Avatar';
+
 import './index.css';
 
 function Header() {
   return (
     <header className="header">
       <div className="header__container">
-        <img src="/images/logo/simple-logo-blue.svg" alt="logo" className="header__logo" />
-        <nav className="menu">
-          <li className="menu__item">
-            <img src="/images/icons/icon-account-blue.png" alt="icon-account" />
-            <Link to="/">Моя страница</Link>
-          </li>
-          <li className="menu__item">
-            <img src="/images/icons/icon-tolk-blue.png" alt="icon-tolk" />
-            <Link to="/communication">Общение</Link>
-          </li>
-          <li className="menu__item">
-            <img src="/images/icons/icon-news-blue.svg" alt="icon-news" />
-            <Link to="/news">Новости</Link>
-          </li>
-        </nav>
+        <Logo width="100px" />
+        <Menu />
         <div className="header__avatar">
-          <img
-            src="/images/users/alexandra/avatar-test.jpg"
-            alt="avatar"
-            className="header__avatar-image"
-          />
+          <Avatar size="40px" />
           <img src="/images/icons/icon-arrow-dowv.png" alt="" className="header__avatar-arrow" />
         </div>
       </div>
