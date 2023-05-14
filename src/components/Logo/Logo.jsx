@@ -1,12 +1,12 @@
 import React from 'react';
-import './index.css';
+import s from './index.module.css';
 
 function Logo(props) {
   return (
     <img
       src="/images/logo/simple-logo-blue.svg"
       alt="logo"
-      className="header__logo"
+      className={s.logo}
       style={{ width: props.width }}
     />
   );

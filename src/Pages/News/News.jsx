@@ -1,11 +1,11 @@
 import React from 'react';
 import Content from '../../components/Content/Content';
 
-import './index.css';
+import s from './index.module.css';
 
 function News() {
   return (
-    <div className="news">
+    <div className={s.news}>
       <Content />
     </div>
   );

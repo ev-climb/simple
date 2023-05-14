@@ -4,17 +4,17 @@ import Logo from '../Logo/Logo';
 import Menu from '../Menu/Menu';
 import Avatar from '../Avatar/Avatar';
 
-import './index.css';
+import s from './index.module.css';
 
 function Header() {
   return (
-    <header className="header">
-      <div className="header__container">
+    <header className={s.header}>
+      <div className={s.container}>
         <Logo width="100px" />
         <Menu />
-        <div className="header__avatar">
+        <div className={s.avatar}>
           <Avatar size="40px" />
-          <img src="/images/icons/icon-arrow-dowv.png" alt="" className="header__avatar-arrow" />
+          <img src="/images/icons/icon-arrow-dowv.png" alt="" className={s.arrow} />
         </div>
       </div>
     </header>

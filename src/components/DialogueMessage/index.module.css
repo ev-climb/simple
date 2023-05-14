@@ -1,0 +1,30 @@
+.tolkItem {
+  display: flex;
+  width: 80%;
+  margin: 20px auto 0;
+}
+.tolkItem img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.tolkItem__userBox {
+  margin-left: 20px;
+}
+.tolkItem__userBox div {
+  display: flex;
+}
+.tolkItem__userBox div span {
+  font-size: 12px;
+  color: #939393;
+  margin-left: 10px;
+}
+.tolkItem__userBox div h3 {
+  font-size: 12px;
+  color: #38b6ff;
+}
+.tolkItem__userBox p {
+  margin-top: 8px;
+  font-size: 14px;
+}

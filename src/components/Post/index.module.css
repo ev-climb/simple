@@ -2,30 +2,30 @@
   width: 100%;
   background-color: rgba(34, 34, 34, 0.6);
   border-radius: 15px;
-  padding: 10px 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
 }
-.post__header {
+.header {
   display: flex;
   align-items: center;
 }
-.post__info {
+.info {
   margin-left: 10px;
 }
-.post__info p:first-of-type {
+.info p:first-of-type {
   font-size: 13px;
   color: #38b6ff;
   cursor: pointer;
 }
-.post__info p:last-of-type {
+.info p:last-of-type {
   font-size: 13px;
   color: #828282;
   margin-top: 5px;
   cursor: pointer;
 }
-.post__text {
+.text {
   margin: 20px 0;
   font-size: 13px;
 }
