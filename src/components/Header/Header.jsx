@@ -4,13 +4,12 @@ import Logo from '../Logo/Logo';
 import Menu from '../Menu/Menu';
 import Avatar from '../Avatar/Avatar';
 
-import s from './index.module.css';
+import styles from './index.module.css';
 
 function Header() {
   //Эффект исчезания и появления при скроле
   const [isHeaderVisible, setHeaderVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
-
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
@@ -33,13 +32,13 @@ function Header() {
   //--
 
   return (
-    <header className={`${s.header} ${!isHeaderVisible && s.slideUp}`}>
-      <div className={s.container}>
+    <header className={`${styles.header} ${!isHeaderVisible && styles.slideUp}`}>
+      <div className={styles.container}>
         <Logo width="100px" />
         <Menu />
-        <div className={s.avatar}>
+        <div className={styles.avatar}>
           <Avatar size="40px" img={'/images/users/evgeny/evgeny.png'} />
-          <img src="/images/icons/icon-arrow-dowv.png" alt="" className={s.arrow} />
+          <img src="/images/icons/icon-arrow-dowv.png" alt="" className={styles.arrow} />
         </div>
       </div>
     </header>

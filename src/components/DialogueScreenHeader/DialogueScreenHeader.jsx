@@ -1,11 +1,11 @@
 import React from 'react';
-import s from './index.module.css';
+import styles from './index.module.css';
 
 import Avatar from '../Avatar/Avatar';
 
 function DialogueScreenHeader({ user }) {
   return (
-    <div className={s.tolkHeader}>
+    <div className={styles.tolkHeader}>
       <h2>{user.name}</h2>
       <Avatar img={user.img} />
     </div>

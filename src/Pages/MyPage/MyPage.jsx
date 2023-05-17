@@ -2,13 +2,13 @@ import React from 'react';
 
 import UserInfo from '../../components/UserInfo/UserInfo';
 import Content from '../../components/Content/Content';
-import s from './index.module.css';
+import styles from './index.module.css';
 
 import users from '../../data/users';
 
 function MyPage() {
   return (
-    <div className={s.myPage}>
+    <div className={styles.myPage}>
       <UserInfo user={users[0]} />
       <Content user={users[0]} />
     </div>

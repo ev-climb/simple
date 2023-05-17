@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from './index.module.css';
+import styles from './index.module.css';
 import users from '../../data/users';
 
 import FrandsMiniBlockItem from '../FrandsMiniBlockItem/FrandsMiniBlockItem';
@@ -11,13 +11,13 @@ function FrandsMiniBlock() {
   });
 
   return (
-    <div className={s.frendsBlock}>
-      <div className={s.frendsMiniBlock}>
-        <div className={s.title}>
+    <div className={styles.frendsBlock}>
+      <div className={styles.frendsMiniBlock}>
+        <div className={styles.title}>
           <h2>Друзья</h2>
           <span>{users[0].friends.length}</span>
         </div>
-        <div className={s.items}>{usersForMiniBlock}</div>
+        <div className={styles.items}>{usersForMiniBlock}</div>
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 import React from 'react';
-import s from './index.module.css';
+import styles from './index.module.css';
 
 function UserAvatar(props) {
   return (
-    <div className={s.avatar}>
+    <div className={styles.avatar}>
       <img src={props.img} alt="avatar" />
     </div>
   );

@@ -4,12 +4,12 @@ import Posts from '../Posts/Posts';
 import FrandsMiniBlock from '../FrandsMiniBlock/FrandsMiniBlock';
 import NewPostInput from '../NewPostInput/NewPostInput';
 
-import s from './index.module.css';
+import styles from './index.module.css';
 
 function Content({ user }) {
   return (
-    <div className={s.content}>
-      <div className={s.postsBlock}>
+    <div className={styles.content}>
+      <div className={styles.postsBlock}>
         <NewPostInput user={user} />
         <Posts />
       </div>

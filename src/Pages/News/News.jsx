@@ -1,12 +1,12 @@
 import React from 'react';
 import Content from '../../components/Content/Content';
 
-import s from './index.module.css';
+import styles from './index.module.css';
 import users from '../../data/users';
 
 function News() {
   return (
-    <div className={s.news}>
+    <div className={styles.news}>
       <Content user={users[0]} />
     </div>
   );
