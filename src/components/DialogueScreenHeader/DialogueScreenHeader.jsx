@@ -3,11 +3,11 @@ import s from './index.module.css';
 
 import Avatar from '../Avatar/Avatar';
 
-function DialogueScreenHeader() {
+function DialogueScreenHeader({ user }) {
   return (
     <div className={s.tolkHeader}>
-      <h2>Фиби</h2>
-      <Avatar />
+      <h2>{user.name}</h2>
+      <Avatar img={user.img} />
     </div>
   );
 }

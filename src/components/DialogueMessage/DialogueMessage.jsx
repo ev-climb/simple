@@ -3,16 +3,16 @@ import s from './index.module.css';
 
 import Avatar from '../Avatar/Avatar';
 
-function DialogueMessage() {
+function DialogueMessage({ user, text }) {
   return (
     <div className={s.tolkItem}>
-      <Avatar />
+      <Avatar img={user.img} />
       <div className={s.tolkItem__userBox}>
         <div>
-          <h3>Александра</h3>
+          <h3>{user.name}</h3>
           <span>22:49</span>
         </div>
-        <p>Привет, как дела?</p>
+        <p>{text}</p>
       </div>
     </div>
   );

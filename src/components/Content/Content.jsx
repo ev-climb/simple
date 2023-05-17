@@ -6,11 +6,11 @@ import NewPostInput from '../NewPostInput/NewPostInput';
 
 import s from './index.module.css';
 
-function Content() {
+function Content({ user }) {
   return (
     <div className={s.content}>
       <div className={s.postsBlock}>
-        <NewPostInput />
+        <NewPostInput user={user} />
         <Posts />
       </div>
       <FrandsMiniBlock />

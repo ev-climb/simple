@@ -3,11 +3,11 @@ import s from './index.module.css';
 
 import Avatar from '../Avatar/Avatar';
 
-function FrandsMiniBlockItem() {
+function FrandsMiniBlockItem({ user }) {
   return (
     <div className={s.item}>
-      <Avatar />
-      <p>Чендлер</p>
+      <Avatar img={user.img} />
+      <p>{user.name}</p>
     </div>
   );
 }

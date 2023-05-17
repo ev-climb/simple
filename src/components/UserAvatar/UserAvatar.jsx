@@ -1,10 +1,10 @@
 import React from 'react';
 import s from './index.module.css';
 
-function UserAvatar() {
+function UserAvatar(props) {
   return (
     <div className={s.avatar}>
-      <img src="/images/users/alexandra/avatar-test-big.jpg" alt="avatar" />
+      <img src={props.img} alt="avatar" />
     </div>
   );
 }

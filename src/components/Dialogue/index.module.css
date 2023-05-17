@@ -1,3 +1,7 @@
+.link {
+  text-decoration: none;
+}
+
 .user {
   display: flex;
   align-items: center;

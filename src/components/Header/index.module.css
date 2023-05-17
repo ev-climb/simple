@@ -4,6 +4,10 @@
   background-color: rgba(34, 34, 34, 0.6);
   display: flex;
   justify-content: center;
+  z-index: 100;
+  top: 0;
+  position: fixed;
+  transition: top 0.5s ease-in-out;
 }
 .container {
   width: 60%;
@@ -24,4 +28,9 @@
 .arrow {
   width: 15px;
   margin-left: 8px;
+}
+
+.slideUp {
+  top: -60px;
+  transition: top 0.5s ease-in-out;
 }

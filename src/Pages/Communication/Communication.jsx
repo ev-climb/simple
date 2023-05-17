@@ -1,14 +1,16 @@
 import React from 'react';
-import s from './index.module.css';
 
 import DialogueList from '../../components/DialogueList/DialogueList';
 import DialogueScreen from '../../components/DialogueScreen/DialogueScreen';
 
+import s from './index.module.css';
+import users from '../../data/users';
+
 function Communication() {
   return (
     <div className={s.communication}>
-      <DialogueList />
-      <DialogueScreen />
+      <DialogueList user={users[0]} />
+      <DialogueScreen user={users[0]} />
     </div>
   );
 }

@@ -3,18 +3,18 @@ import s from './index.module.css';
 
 import Avatar from '../Avatar/Avatar';
 
-function Post() {
+function Post({ user, text, img }) {
   return (
     <div className={s.post}>
       <div className={s.header}>
-        <Avatar size="40px" />
+        <Avatar size="40px" img={user.img} />
         <div className={s.info}>
-          <p>Евсеева Александра</p>
+          <p>{user.name}</p>
           <p>6 янв 2021</p>
         </div>
       </div>
-      <p className={s.text}>Впереди лето и много всего интересного! Готовимся!</p>
-      <img className={s.image} src="/images/users/alexandra/posts/1.jpeg" alt="photo" />
+      <p className={s.text}>{text}</p>
+      <img className={s.image} src={img} alt="photo" />
     </div>
   );
 }

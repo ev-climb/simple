@@ -1,16 +1,18 @@
 import React from 'react';
-import s from './index.module.css';
 
 import DialogueScreenHeader from '../DialogueScreenHeader/DialogueScreenHeader';
 import DialogueBoard from '../DialogueBoard/DialogueBoard';
 import DialogueNewMessage from '../DialogueNewMessage/DialogueNewMessage';
 
+import s from './index.module.css';
+import users from '../../data/users';
+
 function DialogueScreen() {
   return (
     <div className={s.tolk}>
-      <DialogueScreenHeader />
+      <DialogueScreenHeader user={users[1]} />
       <div>
-        <DialogueBoard />
+        <DialogueBoard users={users} />
         <DialogueNewMessage />
       </div>
     </div>
