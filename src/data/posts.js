@@ -1,4 +1,4 @@
-const posts = [
+export const postsData = [
   {
     PostId: '1',
     date: '6 мая 2021',
@@ -22,4 +22,7 @@ const posts = [
     },
   },
 ];
-export default posts;
+
+export const addPostToData = (post) => {
+  postsData.push(post);
+};

@@ -9,13 +9,24 @@ import Communication from './Pages/Communication/Communication';
 import Header from './components/Header/Header';
 
 import './app.css';
+import { postsData, addPostToData } from './data/posts';
+import usersData from './data/users';
 
 function App() {
+  const [posts, setPosts] = React.useState(postsData);
+  const [users, setUsers] = React.useState(usersData);
+
+  const addPost = (newPost) => {
+    setPosts([...posts, newPost]);
+    addPostToData(newPost);
+  };
+  console.log(posts);
+
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" element={<MyPage />} />
+        <Route exact path="/" element={<MyPage posts={posts} addPost={addPost} users={users} />} />
         <Route path="/news" element={<News />} />
         <Route path="/communication/*" element={<Communication />} />
       </Routes>
