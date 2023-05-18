@@ -39,27 +39,47 @@ function NewPostInput({ user, posts, addPost }) {
     console.log(newPost);
   };
 
+  //Изменение высоты инпута в зависимости от введенных строк
+  const calculateTextAreaHeight = () => {
+    const lineHeight = 20; // Высота одной строки текста
+    const minRows = 1; // Минимальное количество строк
+    const maxRows = 20; // Максимальное количество строк
+
+    const rows = Math.min(Math.max(Math.ceil(newPostText.length / 57), minRows), maxRows);
+    return `${lineHeight * rows}px`;
+  };
+
   return (
-    <div className={styles.newPostBlock}>
-      <Avatar size="40px" img={user.img} />
-      <textarea
-        type="text"
-        placeholder="Что нового?"
-        value={newPostText}
-        onChange={(e) => setNewPostText(e.target.value)}
-      />
-      <img src="/images/icons/icon-smile.png" alt="smile" />
-      <label htmlFor="imageInput">
-        <img src="/images/icons/icon-photo.png" alt="photo" />
-      </label>
-      <input
-        id="imageInput"
-        type="file"
-        accept="image/*"
-        onChange={handleImageUpload}
-        style={{ display: 'none' }}
-      />
-      <button onClick={handlePostSubmit}>Опубликовать</button>
+    <div className={styles.container}>
+      <div className={styles.newPostBlock}>
+        <Avatar size="40px" img={user.img} />
+        <textarea
+          type="text"
+          placeholder="Что нового?"
+          value={newPostText}
+          onChange={(e) => setNewPostText(e.target.value)}
+          style={{ height: calculateTextAreaHeight() }}
+        />
+        <img src="/images/icons/icon-smile.png" alt="smile" />
+        <label htmlFor="imageInput">
+          <img src="/images/icons/icon-photo.png" alt="photo" />
+        </label>
+        <input
+          id="imageInput"
+          type="file"
+          accept="image/*"
+          onChange={handleImageUpload}
+          style={{ display: 'none' }}
+        />
+      </div>
+      {newPostImage && <img className={styles.postImage} src={newPostImage} />}
+      {newPostText || newPostImage ? (
+        <button className={styles.submitBtn} onClick={handlePostSubmit}>
+          Опубликовать
+        </button>
+      ) : (
+        ''
+      )}
     </div>
   );
 }
