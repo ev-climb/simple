@@ -55,6 +55,11 @@ function NewPostInput({ user, posts, addPost }) {
   const handleSmileyClick = () => {
     setShowSmileyPicker(!showSmileyPicker);
   };
+  //Сбросить введенный текст и изображение
+  const resetNewPost = () => {
+    setNewPostText('');
+    setNewPostImage(null);
+  };
 
   return (
     <div className={styles.container}>
@@ -68,7 +73,9 @@ function NewPostInput({ user, posts, addPost }) {
           style={{ height: calculateTextAreaHeight() }}
           ref={textInputRef}
         />
-        {newPostText && <img src="/images/icons/icon-remove.svg" alt="remove" />}
+        {newPostText && (
+          <img src="/images/icons/icon-remove.svg" alt="remove" onClick={resetNewPost} />
+        )}
       </div>
       {newPostImage && <img className={styles.postImage} src={newPostImage} />}
 
