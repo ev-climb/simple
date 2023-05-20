@@ -2,8 +2,9 @@
   width: 100%;
   background-color: rgba(34, 34, 34, 0.6);
   border-radius: 15px;
-  padding: 10px 20px;
+  padding: 20px;
   position: relative;
+  border: 1px solid rgb(66 66 66);
 }
 
 .newPostBlock {
@@ -17,41 +18,53 @@
   width: 100%;
   background-color: initial;
   border: none;
-  margin: 12px 10px;
+  margin: 12px 10px 0;
   resize: none;
-  overflow: hidden;
+  overflow: auto;
 }
 .newPostBlock textarea:focus {
   outline: none;
-  min-height: 60px;
 }
-
-.newPostBlock img:nth-of-type(2) {
+.newPostBlockActive {
+  margin-bottom: 50px;
+}
+.newPostBlock img {
   width: 20px;
-  margin: 10px 10px 0 0;
   cursor: pointer;
-  display: none;
 }
-.newPostBlock:focus-within img:nth-of-type(2) {
-  display: block;
+.newPostBlock img:hover {
+  rotate: -15deg;
 }
-.newPostBlock img:last-of-type {
+.buttons {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.buttons img:first-of-type {
   width: 20px;
-  margin-top: 10px;
   cursor: pointer;
+}
+.buttons img:last-of-type {
+  width: 20px;
+  cursor: pointer;
+}
+.buttons label {
+  height: 20px;
 }
 .submitBtn {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
   width: 120px;
   height: 30px;
   border-radius: 8px;
   background-color: #e1e3e6;
   border: none;
   color: #222222;
+  cursor: pointer;
+  margin-left: 10px;
 }
 .postImage {
   width: inherit;
-  margin: 20px 0 40px;
+  margin: 10px 0 60px;
 }

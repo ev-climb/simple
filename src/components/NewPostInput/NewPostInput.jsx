@@ -1,12 +1,15 @@
 import React from 'react';
 
 import Avatar from '../Avatar/Avatar';
+import EmojiInput from '../EmojiInput/EmojiInput';
 
 import styles from './index.module.css';
 
 function NewPostInput({ user, posts, addPost }) {
-  const [newPostText, setNewPostText] = React.useState('');
-  const [newPostImage, setNewPostImage] = React.useState(null);
+  const [newPostText, setNewPostText] = React.useState(''); //Стейт для вводимого в инпут текста
+  const [newPostImage, setNewPostImage] = React.useState(null); //Стейт для изображения для нового поста
+  const [showSmileyPicker, setShowSmileyPicker] = React.useState(false); //Состояние отображения списка имодзи
+  const textInputRef = React.useRef(null); //Место установки курсора в инпуте
 
   //Добавление изображения
   const handleImageUpload = (event) => {
@@ -36,22 +39,26 @@ function NewPostInput({ user, posts, addPost }) {
     addPost(newPost);
     setNewPostText('');
     setNewPostImage(null);
-    console.log(newPost);
   };
-
   //Изменение высоты инпута в зависимости от введенных строк
   const calculateTextAreaHeight = () => {
     const lineHeight = 20; // Высота одной строки текста
     const minRows = 1; // Минимальное количество строк
     const maxRows = 20; // Максимальное количество строк
 
-    const rows = Math.min(Math.max(Math.ceil(newPostText.length / 57), minRows), maxRows);
+    const newLineCount = (newPostText.match(/\n/g) || []).length; // Количество символов новой строки
+
+    const rows = Math.min(minRows + newLineCount, maxRows);
     return `${lineHeight * rows}px`;
+  };
+  //Выпадающий список имодзи
+  const handleSmileyClick = () => {
+    setShowSmileyPicker(!showSmileyPicker);
   };
 
   return (
     <div className={styles.container}>
-      <div className={styles.newPostBlock}>
+      <div className={`${styles.newPostBlock} ${newPostText && styles.newPostBlockActive}`}>
         <Avatar size="40px" img={user.img} />
         <textarea
           type="text"
@@ -59,8 +66,22 @@ function NewPostInput({ user, posts, addPost }) {
           value={newPostText}
           onChange={(e) => setNewPostText(e.target.value)}
           style={{ height: calculateTextAreaHeight() }}
+          ref={textInputRef}
         />
-        <img src="/images/icons/icon-smile.png" alt="smile" />
+        {newPostText && <img src="/images/icons/icon-remove.svg" alt="remove" />}
+      </div>
+      {newPostImage && <img className={styles.postImage} src={newPostImage} />}
+
+      <div className={styles.buttons}>
+        <img src="/images/icons/icon-smile.png" alt="smile" onClick={handleSmileyClick} />
+        {showSmileyPicker && (
+          <EmojiInput
+            textInputRef={textInputRef}
+            newPostText={newPostText}
+            setNewPostText={setNewPostText}
+            setShowSmileyPicker={setShowSmileyPicker}
+          />
+        )}
         <label htmlFor="imageInput">
           <img src="/images/icons/icon-photo.png" alt="photo" />
         </label>
@@ -71,15 +92,14 @@ function NewPostInput({ user, posts, addPost }) {
           onChange={handleImageUpload}
           style={{ display: 'none' }}
         />
+        {newPostText || newPostImage ? (
+          <button className={styles.submitBtn} onClick={handlePostSubmit}>
+            Опубликовать
+          </button>
+        ) : (
+          ''
+        )}
       </div>
-      {newPostImage && <img className={styles.postImage} src={newPostImage} />}
-      {newPostText || newPostImage ? (
-        <button className={styles.submitBtn} onClick={handlePostSubmit}>
-          Опубликовать
-        </button>
-      ) : (
-        ''
-      )}
     </div>
   );
 }

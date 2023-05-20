@@ -20,14 +20,20 @@ function App() {
     setPosts([...posts, newPost]);
     addPostToData(newPost);
   };
-  console.log(posts);
 
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" element={<MyPage posts={posts} addPost={addPost} users={users} />} />
-        <Route path="/news" element={<News />} />
+        <Route
+          exact
+          path="/"
+          element={<MyPage posts={posts} setPosts={setPosts} addPost={addPost} users={users} />}
+        />
+        <Route
+          path="/news"
+          element={<News posts={posts} setPosts={setPosts} addPost={addPost} users={users} />}
+        />
         <Route path="/communication/*" element={<Communication />} />
       </Routes>
     </div>
