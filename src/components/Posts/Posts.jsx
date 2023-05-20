@@ -8,10 +8,11 @@ function Posts({ posts, setPosts }) {
     setPosts(updatedPosts);
     localStorage.setItem('posts', JSON.stringify(updatedPosts));
   };
+  const sortedPosts = posts.slice().sort((a, b) => b.timestamp - a.timestamp);
 
-  const renderPosts = posts.reverse().map((post) => {
-    return <Post post={post} removePost={removePostFromState} key={post.PostId} />;
-  });
+  const renderPosts = sortedPosts
+    .reverse()
+    .map((post) => <Post post={post} removePost={removePostFromState} key={post.PostId} />);
 
   return <div>{renderPosts}</div>;
 }
