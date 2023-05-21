@@ -28,11 +28,11 @@
 .newPostBlockActive {
   margin-bottom: 50px;
 }
-.newPostBlock img {
+.reset {
   width: 20px;
   cursor: pointer;
 }
-.newPostBlock img:hover {
+.reset:hover {
   rotate: -15deg;
 }
 .buttons {

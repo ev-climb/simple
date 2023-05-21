@@ -42,7 +42,7 @@ function NewPostInput({ user, posts, addPost }) {
   };
   //Изменение высоты инпута в зависимости от введенных строк
   const calculateTextAreaHeight = () => {
-    const lineHeight = 20; // Высота одной строки текста
+    const lineHeight = 23; // Высота одной строки текста
     const minRows = 1; // Минимальное количество строк
     const maxRows = 20; // Максимальное количество строк
 
@@ -74,7 +74,12 @@ function NewPostInput({ user, posts, addPost }) {
           ref={textInputRef}
         />
         {newPostText && (
-          <img src="/images/icons/icon-remove.svg" alt="remove" onClick={resetNewPost} />
+          <img
+            src="/images/icons/icon-remove.svg"
+            alt="remove"
+            onClick={resetNewPost}
+            className={styles.reset}
+          />
         )}
       </div>
       {newPostImage && <img className={styles.postImage} src={newPostImage} />}
